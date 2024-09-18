@@ -40,22 +40,17 @@
   "top_7_r_3b": "自定义您的状态！选择一个头像和颜色来代表你自己，选择浅色或深色模式，选择表情符号来代表你的帐户，然后看看应用程序将呈现你加入的社区的特征。",
   "top_7_r_4a": "使用多个配置文件",
   "top_7_r_4b": "不同的在线身份？或者与家人或朋友共享设备？没问题，Status 完全支持在多个完全独立的身份之间切换。",
-  "top_8_1":"使用钥匙卡状态更好",
-  "top_8_2":"安全的非接触式硬件钱包",
-
+  "top_8_1": "使用钥匙卡状态更好",
+  "top_8_2": "安全的非接触式硬件钱包",
   "top_9_card_1a": "去中心化的未来",
   "top_9_card_1b": "构建应用程序来维护人权、保护言论自由和保护隐私",
   "top_9_card_1c": "我的宣言",
-
   "top_9_card_2a": "Status 的代币",
   "top_9_card_2b": "参与 Status 的治理并帮助指导 SNT 的开发。",
   "top_9_card_2c": "关于BOBO",
-
   "top_9_card_3a": "保持最新状态",
   "top_9_card_3b": "在我们构建真正去中心化的超级应用程序时关注开发进度。",
   "top_9_card_3c": "阅读博客",
-
-  
   "top_9_contract_1a": "联系我们",
   "top_9_contract_1b": "Contact Us",
   "top_9_contract_2a": "欣千耀科技有限公司",
@@ -64,8 +59,6 @@
   "top_9_contract_3a": "联系人：谭先生",
   "top_9_contract_4a": "电话: 13113113131",
   "top_9_id_mark": "xinqianyao Copyright 2013-2021 xinqianyao.com All rights reserved.欣千耀版权所有",
-  
-
   "nav_specialty": "特征",
   "nav_env": "生态系统",
   "nav_org": "组织",
@@ -74,5 +67,7 @@
   "nav_develop": "开发商",
   "nav_snt": "SNT",
   "more": "了解更多",
-  "end": ""
+  "end": "",
+  "nav_wallet": "账号摘要",
+  "nav_bonus": "质押详情"
 }

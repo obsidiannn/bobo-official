@@ -17,23 +17,20 @@
   "top_4_community": "Community",
   "top_4_chat_title": "Chat with Your Friends",
   "top_4_chat_title_desc": "Protect your right to free speech with decentralized messaging, metadata privacy, and end-to-end encryption",
-  "top_4_img_1a":"Create and join ongoing group chats",
-  "top_4_img_1b":"This is the Internet, verify your contacts",
-  "top_4_img_2":"Send crypto coins to your friends directly via chat",
-
-  "top_5_button":"Wallet",  
-  "top_5_title":"Future is multi chains",  
-  "top_5_title_desc":"L2 makes it simple - send and manage your cryptocurrencies easily and securely across multiple networks.",  
-  "top_5_img_1a":"Complete self-custody.Nobody can stop you to using tokens.",
-  "top_5_img_1b":"This is the Internet, verify your contacts",
-  "top_5_img_2":"Send crypto coins to your friends directly via chat",
-
-  "top_6_button":"Browser",
-  "top_6_title":"Explore dApps",  
-  "top_6_title_desc":"Trusted interaction with Web3 Dapps, DAOs, NFT, DeFi, and more.",  
-  "top_6_img_2":"Free from tracking and data collection",
-  "top_6_img_3":"Full chain dApp connection. So you don't have to choose a chain.",
-  
+  "top_4_img_1a": "Create and join ongoing group chats",
+  "top_4_img_1b": "This is the Internet, verify your contacts",
+  "top_4_img_2": "Send crypto coins to your friends directly via chat",
+  "top_5_button": "Wallet",
+  "top_5_title": "Future is multi chains",
+  "top_5_title_desc": "L2 makes it simple - send and manage your cryptocurrencies easily and securely across multiple networks.",
+  "top_5_img_1a": "Complete self-custody.Nobody can stop you to using tokens.",
+  "top_5_img_1b": "This is the Internet, verify your contacts",
+  "top_5_img_2": "Send crypto coins to your friends directly via chat",
+  "top_6_button": "Browser",
+  "top_6_title": "Explore dApps",
+  "top_6_title_desc": "Trusted interaction with Web3 Dapps, DAOs, NFT, DeFi, and more.",
+  "top_6_img_2": "Free from tracking and data collection",
+  "top_6_img_3": "Full chain dApp connection. So you don't have to choose a chain.",
   "top_7_left": "Full chain dApp connection. So you don't have to choose a chain.",
   "top_7_r_1a": "Explore dApps",
   "top_7_r_1b": "Just like the operating system, no matter what you've been doing lately, it's just a few taps away. Go from chatting with friends to an account without going back",
@@ -43,22 +40,17 @@
   "top_7_r_3b": "Customize your status! Choose an avatar and color to represent yourself, choose a light or dark pattern, choose an emoji to represent your account, and then see how the app will present the characteristics of the community you joined.",
   "top_7_r_4a": "Use multiple profiles",
   "top_7_r_4b": "Different online identities? Or share a device with family or friends? No problem, Status fully supports switching between multiple completely separate identities.",
-
-  "top_8_1":"It's better to use a key card",
-  "top_8_2":"Secure contactless hardware wallet",
-
+  "top_8_1": "It's better to use a key card",
+  "top_8_2": "Secure contactless hardware wallet",
   "top_9_card_1a": "The Future of Decentralization",
   "top_9_card_1b": "Build applications to uphold human rights, protect free speech, and protect privacy",
   "top_9_card_1c": "My Manifesto",
-
   "top_9_card_2a": "Status coins",
   "top_9_card_2b": "Participate in the governance of Status and help guide the development of SNT.",
   "top_9_card_2c": "Abort BOBO",
-
   "top_9_card_3a": "Keep up to date",
   "top_9_card_3b": "Keep watching on development progress as we build truly decentralized super applications.",
   "top_9_card_3c": "Read Blogs",
-  
   "top_9_contract_1a": "Contact Us",
   "top_9_contract_1b": "",
   "top_9_contract_2a": "欣千耀科技有限公司",
@@ -67,7 +59,6 @@
   "top_9_contract_3a": "Contact Person: Mr.Tan",
   "top_9_contract_4a": "phone: +86 13113113131",
   "top_9_id_mark": "xinqianyao Copyright 2013-2021 xinqianyao.com All rights reserved.欣千耀版权所有",
-
   "nav_specialty": "Specialty",
   "nav_env": "Community",
   "nav_org": "Organization",
@@ -76,5 +67,7 @@
   "nav_develop": "Developer",
   "nav_snt": "SNT",
   "more": "More",
-  "end": ""
+  "end": "",
+  "nav_wallet": "Wallet",
+  "nav_bonus": "Bonus"
 }

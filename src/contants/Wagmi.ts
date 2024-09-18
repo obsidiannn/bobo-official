@@ -1,4 +1,4 @@
-import type { Transport } from 'viem'
+import { defineChain, type Transport } from 'viem'
 import { createConfig, http } from 'wagmi'
 import {
   mainnet,
@@ -51,6 +51,26 @@ const customZkSyncSepoliaTestnet = { ...zkSyncSepoliaTestnet, iconUrl: '/assets/
 const customLinea = { ...linea, iconUrl: '/assets/chains/linea.svg' }
 const customLineaTestnet = { ...lineaTestnet, iconUrl: '/assets/chains/linea.svg' }
 
+
+const boboNet = defineChain({
+  id: 1337,
+  name: 'Bobo Test Net',
+  nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+  rpcUrls: {
+    default: {
+      http: ['http://192.168.31.201:7545'],
+    },
+  },
+  contracts: {
+    boboBonus: {
+      address: '0x524CA1cB369f72fe01382227dE437D99918c8959',
+    },
+    boboErc20: {
+      address: '0x0B61ACA359Ea87645bE626162B0B37d4f34F3298',
+    },
+  },
+})
+
 export const Transports: Record<number, Transport> = {
   [mainnet.id]: http(),
   [sepolia.id]: http(),
@@ -67,8 +87,10 @@ export const Transports: Record<number, Transport> = {
   [base.id]: http(),
   [baseGoerli.id]: http(),
   [bsc.id]: http(),
-  [bscTestnet.id]: http()
+  [bscTestnet.id]: http(),
+  [boboNet.id]: http()
 }
+
 
 export const WagmiConfig = createConfig({
   chains: [
@@ -87,7 +109,8 @@ export const WagmiConfig = createConfig({
     base,
     baseGoerli,
     bsc,
-    bscTestnet
+    bscTestnet,
+    boboNet
   ],
   connectors: Connectors,
   transports: Transports,

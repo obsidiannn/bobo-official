@@ -11,29 +11,30 @@ export default () => {
     const navigation = [
         { name: t('nav_specialty'), href: '#' },
         { name: t('nav_env'), href: '#' },
-        { name: t('nav_org'), href: '#' },
-        { name: t('nav_help'), href: '#' },
+        // { name: t('nav_org'), href: '#' },
+        // { name: t('nav_help'), href: '#' },
         { name: t('nav_collaborate'), href: '#' },
-        { name: t('nav_develop'), href: '#' },
-        { name: t('nav_snt'), href: '#' },
+        { name: t('nav_wallet'), href: '/wallet' },
+        { name: t('nav_bonus'), href: '/bonus' },
     ]
 
     return <div className="flex top-0 z-50 bg-gray-800 border-b-style-solid -border--1 border-b-gray-500">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-            <a>
+            <a href="/">
                 <Image src="/assets/images/logo.png" className="w-16 h-16" />
             </a>
             <div className="hidden ml-8 lg:flex lg:gap-x-12 ">
-                {navigation.map((item) => (
-                    <a key={item.name} href={item.href} className="text-sm leading-6 text-gray-300 hover:text-blue-500">
+                {navigation.map((item) => {
+                    const color = item.href === '#' ? 'text-white' : 'text-yellow-400'
+                    return <a key={item.name} href={item.href} className={`text-sm leading-6 hover:text-blue-600 ${color}`}>
                         {item.name}
                     </a>
-                ))}
+                })}
             </div>
         </nav>
         <div className="flex flex-self-center ml-auto mr-10">
             <div className="flex flex-row items-center">
-                <select className='border-rd-8 bg-gray-800 -border--1 border-gray-500 text-gray-300 mr-3 p3'
+                <select className='rounded-3xl bg-gray-800 border border-gray-500 text-gray-300 mr-3 p-2'
                     value={currentLan}
                     onChange={event => {
                         i18n.changeLanguage(event.target.value)
@@ -48,5 +49,5 @@ export default () => {
                 <ConnectButton />
             </div>
         </div>
-    </div>
+    </div >
 }
