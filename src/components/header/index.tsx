@@ -25,7 +25,7 @@ export default () => {
             </a>
             <div className="hidden ml-8 lg:flex lg:gap-x-12 ">
                 {navigation.map((item) => (
-                    <a key={item.name} href={item.href} className="text-sm leading-6 text-gray-300">
+                    <a key={item.name} href={item.href} className="text-sm leading-6 text-gray-300 hover:text-blue-500">
                         {item.name}
                     </a>
                 ))}

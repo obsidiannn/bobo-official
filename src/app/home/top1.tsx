@@ -23,20 +23,21 @@ export default function Top() {
             {t('top1_register_first')}
           </a>
         </div>
-        <div className="flex flex-col mt-5  items-center justify-center gap-x-6">
+        <div className="flex flex-col mt-5 items-center justify-center gap-x-6">
           <span className=" text-white text-4 leading-8 text-center ">
             {t('top1_supply_1')}
           </span>
-          <span className=" text-white text-4 leading-8 text-center ">
+          <span className=" text-white text-4 leading-8 text-center "> 
             {t('top1_supply_2')}
           </span>
         </div>
       </div>
-      <div className="mt-12">
+      <div className="flex flex-row justify-between w-full mb-20 mt-0">
         <img src="/assets/icon-fonts/head.svg" />
       </div>
-      <img src="/assets/icon-fonts/coins.svg" alt="" className='absolute w-32 h-32 right-0 bottom-5' />
-      <img src="/assets/icon-fonts/right-hand.svg" alt="" className='absolute w-32 h-32 left-0 bottom-8' />
+      <img src="/assets/icon-fonts/coins.svg" alt="" className='absolute w-64 h-64 left-0 ' style={{ top: '30%' }} />
+      <img src="/assets/icon-fonts/right-hand.svg" alt="" className='absolute w-64 h-64 right-0 ' style={{ top: '30%' }} />
+
     </div>
 
   </div>
