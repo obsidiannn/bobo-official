@@ -11,10 +11,11 @@ const FormLine = ({
     value = '',
     children,
     width,
+    className = '',
     ...props
 }: FormLineProps) => {
 
-    return <Text as="span" className="w-full" {...props}>
+    return <Text as="span" className={`w-full ${className}`} {...props}>
         {label && (
             <Text as="span" textAlign="right" className="inline-block mr-6" width={width} fontSize={20} fontWeight="800">
                 {`${label}: `}

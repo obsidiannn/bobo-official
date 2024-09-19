@@ -5,7 +5,7 @@ import FormLine from '../form/form-line'
 import abi from './abi/BoboToken.json'
 import { Button } from '@chakra-ui/react'
 
-const BotBalance = (): React.JSX.Element => {
+const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean }): React.JSX.Element => {
     const { address, chain } = useAccount()
     const [loading, setLoading] = useState(false)
     // const { data } = useBalance({ address })
@@ -51,8 +51,8 @@ const BotBalance = (): React.JSX.Element => {
     }
 
     return <div className='flex flex-row items-center'>
-        <FormLine label="Bobo Erc20 Balance" value={renderResult()} />
-        <Button className='p-6' isLoading={loading} onClick={doFreeMint}>Mint For Free</Button>
+        <FormLine label={title ?? "Bobo Erc20 Balance"} value={renderResult()} />
+        {enableMint ? <Button className='p-6' isLoading={loading} onClick={doFreeMint}>Mint For Free</Button> : null}
     </div>
 }
 
