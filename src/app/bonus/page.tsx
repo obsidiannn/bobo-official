@@ -133,7 +133,7 @@ const BounsPage = () => {
                         </>
                     )}
                     <BounsModal ref={bounsRef}
-                        address={((chain?.contracts?.boboBonus) as ChainContract).address}
+                        address={((chain?.contracts?.boboBonus) as ChainContract)?.address}
                         account={address ?? ''}
                         onClose={async (flag, id, amount) => {
                             if (flag) {

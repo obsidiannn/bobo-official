@@ -58,18 +58,37 @@ const boboNet = defineChain({
   nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
     default: {
-      http: ['http://192.168.31.201:7545'],
+      http: ['http://101.35.197.66:8545'],
     },
   },
   contracts: {
     boboBonus: {
-      address: '0x524CA1cB369f72fe01382227dE437D99918c8959',
+      address: '0x3f0E5674C78190cd5D2F305425439c0Ee4B4E0B5',
     },
     boboErc20: {
-      address: '0x0B61ACA359Ea87645bE626162B0B37d4f34F3298',
+      address: '0x86a6b0629884864578DBA6BB6DDF1346AD753E26',
     },
   },
 })
+
+// const boboNet = defineChain({
+//   id: 1337,
+//   name: 'Bobo Test Net',
+//   nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+//   rpcUrls: {
+//     default: {
+//       http: ['http://192.168.31.201:7545'],
+//     },
+//   },
+//   contracts: {
+//     boboBonus: {
+//       address: '0x524CA1cB369f72fe01382227dE437D99918c8959',
+//     },
+//     boboErc20: {
+//       address: '0x0B61ACA359Ea87645bE626162B0B37d4f34F3298',
+//     },
+//   },
+// })
 
 export const Transports: Record<number, Transport> = {
   [mainnet.id]: http(),

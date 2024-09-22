@@ -10,7 +10,6 @@ const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean
     const { address, chain } = useAccount()
     const [loading, setLoading] = useState(false)
     // const { data } = useBalance({ address })
-    const bounsContract = chain?.contracts?.boboBonus as ChainContract
     const boboContract = chain?.contracts?.boboErc20 as ChainContract
     if (chain?.id !== 1337) {
         return <></>
@@ -19,7 +18,7 @@ const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean
     const { writeContractAsync } = useWriteContract()
     const contractFunc = useReadContract({
         abi: abi.abi,
-        address: bounsContract?.address,
+        address: boboContract?.address,
         functionName: 'balanceOf',
         account: address,
         args: [
@@ -28,7 +27,7 @@ const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean
     })
 
     const renderResult = (): string => {
-        console.log(contractFunc);
+        console.log(contractFunc.data);
 
         if (contractFunc.isSuccess) {
             return String(contractFunc.data) + ' BOT'
@@ -39,11 +38,13 @@ const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean
     const doFreeMint = async () => {
         setLoading(true)
         try {
+            console.log('mint', boboContract.address, address);
+
             const result = await writeContractAsync({
                 abi: abi.abi,
                 address: boboContract?.address,
                 functionName: 'mint',
-                account: address
+                account: address,
             })
             console.log('mint result = ', result);
             await contractFunc.refetch()
