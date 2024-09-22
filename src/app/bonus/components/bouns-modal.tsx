@@ -102,9 +102,9 @@ const BounsModal = forwardRef((props: BounsModalProps, ref) => {
 
     const doClose = (val: boolean) => {
         if (val) {
-            props.onClose(true, basicProp?.id ?? '', amount.amount)
+            props.onClose(true, basicProp?.id ?? 'none', amount.amount)
         } else {
-            props.onClose(false, '', 0)
+            props.onClose(false, 'none', 0)
         }
         onClose()
     }
