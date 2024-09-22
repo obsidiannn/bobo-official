@@ -3,16 +3,18 @@ import { useAccount, useBalance, useReadContract } from 'wagmi'
 import FormLine from '../form/form-line'
 
 import abi from './abi/BoboErc4646Bonus.json'
+import { ChainContract } from 'viem'
 
 const BonusPool = ({ title }: { title?: string }): React.JSX.Element => {
     const { address, chain } = useAccount()
     // const { data } = useBalance({ address })
+    const bounsContract = chain?.contracts?.boboBonus as ChainContract
     if (chain?.id !== 1337) {
         return <></>
     }
     const contractFunc = useReadContract({
         abi: abi.abi,
-        address: chain.contracts.boboBonus.address,
+        address: bounsContract?.address,
         functionName: 'totalAssets',
         account: address,
     })

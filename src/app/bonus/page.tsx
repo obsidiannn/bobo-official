@@ -13,6 +13,7 @@ import BounsModal, { BounsModalType } from './components/bouns-modal'
 
 import bounsAbi from '@/components/contract/abi/BoboErc4646Bonus.json'
 import boboTokenAbi from '@/components/contract/abi/BoboToken.json'
+import { ChainContract } from 'viem'
 
 // interface FormStateProp {
 //     id: 'none' | 'withdraw' | 'mint' | 'redeem'
@@ -55,43 +56,51 @@ const BounsPage = () => {
     }
 
     const doRequest = async (id: 'none' | 'withdraw' | 'mint' | 'redeem', amount: number) => {
+        const boboContract = chain?.contracts?.boboErc20 as ChainContract
+        const bounsContract = chain?.contracts?.boboBonus as ChainContract
+        const boboAddr = boboContract.address ?? null
+        const bounsAddr = bounsContract.address ?? null
+
         if (id === 'mint') {
-            await writeContractAsync({
-                abi: boboTokenAbi.abi,
-                address: chain.contracts.boboErc20.address,
-                functionName: 'approve',
-                account: address,
-                args: [chain.contracts.boboBonus.address, amount]
-            })
-            const result = await writeContractAsync({
-                abi: bounsAbi.abi,
-                address: chain.contracts.boboBonus.address,
-                functionName: 'deposit',
-                account: address,
-                args: [BigInt(amount), address]
-            })
-            
+            if (boboAddr && bounsAddr) {
+                await writeContractAsync({
+                    abi: boboTokenAbi.abi,
+                    address: boboAddr,
+                    functionName: 'approve',
+                    account: address,
+                    args: [bounsAddr, amount]
+                })
+                const result = await writeContractAsync({
+                    abi: bounsAbi.abi,
+                    address: bounsAddr,
+                    functionName: 'deposit',
+                    account: address,
+                    args: [BigInt(amount), address]
+                })
+            }
 
         }
         if (id === 'withdraw') {
-            const result = await writeContractAsync({
-                abi: bounsAbi.abi,
-                address: chain.contracts.boboBonus.address,
-                functionName: 'withdraw',
-                account: address,
-                args: [amount, address, address]
-            })
-
+            if (bounsAddr) {
+                const result = await writeContractAsync({
+                    abi: bounsAbi.abi,
+                    address: bounsAddr,
+                    functionName: 'withdraw',
+                    account: address,
+                    args: [amount, address, address]
+                })
+            }
         }
         if (id === 'redeem') {
-            const result = await writeContractAsync({
-                abi: bounsAbi.abi,
-                address: chain.contracts.boboBonus.address,
-                functionName: 'mint',
-                account: address,
-                args: [amount, address, address]
-            })
-
+            if (bounsAddr) {
+                const result = await writeContractAsync({
+                    abi: bounsAbi.abi,
+                    address: bounsAddr,
+                    functionName: 'mint',
+                    account: address,
+                    args: [amount, address, address]
+                })
+            }
         }
     }
 
@@ -124,7 +133,7 @@ const BounsPage = () => {
                         </>
                     )}
                     <BounsModal ref={bounsRef}
-                        address={chain?.contracts.boboBonus.address}
+                        address={((chain?.contracts?.boboBonus) as ChainContract).address}
                         account={address ?? ''}
                         onClose={async (flag, id, amount) => {
                             if (flag) {

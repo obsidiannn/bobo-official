@@ -4,11 +4,14 @@ import FormLine from '../form/form-line'
 
 import abi from './abi/BoboToken.json'
 import { Button } from '@chakra-ui/react'
+import { ChainContract } from 'viem'
 
 const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean }): React.JSX.Element => {
     const { address, chain } = useAccount()
     const [loading, setLoading] = useState(false)
     // const { data } = useBalance({ address })
+    const bounsContract = chain?.contracts?.boboBonus as ChainContract
+    const boboContract = chain?.contracts?.boboErc20 as ChainContract
     if (chain?.id !== 1337) {
         return <></>
     }
@@ -16,7 +19,7 @@ const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean
     const { writeContractAsync } = useWriteContract()
     const contractFunc = useReadContract({
         abi: abi.abi,
-        address: chain.contracts.boboErc20.address,
+        address: bounsContract?.address,
         functionName: 'balanceOf',
         account: address,
         args: [
@@ -38,7 +41,7 @@ const BotBalance = ({ title, enableMint }: { title?: string, enableMint: boolean
         try {
             const result = await writeContractAsync({
                 abi: abi.abi,
-                address: chain.contracts.boboErc20.address,
+                address: boboContract?.address,
                 functionName: 'mint',
                 account: address
             })
